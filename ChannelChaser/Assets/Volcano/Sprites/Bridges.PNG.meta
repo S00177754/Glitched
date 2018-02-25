@@ -1,9 +1,12 @@
 fileFormatVersion: 2
-guid: 6c438994b003e884c838a510d1263cba
-timeCreated: 1518090384
+guid: aed963829b701fe4593e60a388e7c367
+timeCreated: 1519233322
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Bridges_Horizontal
+    21300002: Bridges_Vertical
+    21300004: Bridges_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -98,7 +101,49 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Bridges_Horizontal
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 693
+        width: 432
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridges_Vertical
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 689
+        width: 432
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bridges_2
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 377
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
