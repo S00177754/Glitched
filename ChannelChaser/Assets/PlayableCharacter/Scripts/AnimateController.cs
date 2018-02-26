@@ -7,21 +7,8 @@ public class AnimateController : MonoBehaviour {
     private Animator player;
     bool test;
 	// Use this for initialization
-
-    public enum Direction
-    {
-        Dead,
-        Up,
-        Down,
-        Left,
-        Right,
-        IdleUp,
-        IdleDown,
-        IdleLeft,
-        IdleRight
-    }
-
 	void Start () {
+		
 	}
 
     private void Awake()
@@ -31,45 +18,35 @@ public class AnimateController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Direction State = Direction.IdleDown;
-
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            State = Direction.Left;
+                player.SetTrigger("North");
         }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            State = Direction.Right;
+            player.SetTrigger("West");
         }
-
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
-            State = Direction.Up;
+            player.SetTrigger("South");
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            State = Direction.Down;
+            player.SetTrigger("East");
         }
 
-        if ((Input.GetKeyUp(KeyCode.W)||Input.GetKeyUp(KeyCode.UpArrow)))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
-            State = Direction.IdleUp;
-        }
-        else if(Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            State = Direction.IdleDown;
+            player.SetTrigger("Idle");
         }
 
-        if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow)))
-        {
-            State = Direction.IdleLeft;
-        }
-        else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            State = Direction.IdleRight;
-        }
-
-        player.SetInteger("direction", (int)State);
     }
 
+    void AnimBoolFalse()
+    {
+        player.SetBool("North", false);
+        player.SetBool("West", false);
+        player.SetBool("East", false);
+        player.SetBool("South", false);
+    }
 }
