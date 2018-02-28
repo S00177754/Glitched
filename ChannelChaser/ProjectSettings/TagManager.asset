@@ -9,6 +9,10 @@ TagManager:
   - Glitch
   - Play
   - Exit
+  - Castle
+  - Forest
+  - Volcano
+  - Lake
   layers:
   - Default
   - TransparentFX
