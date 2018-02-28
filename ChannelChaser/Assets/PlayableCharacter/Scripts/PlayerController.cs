@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-    public float speed;
+    public float speed = 2;
     static public Rigidbody2D playerRB;
-    int blastForce = 5;
+    
     // Use this for initialization
     void Start ()
     {
@@ -16,6 +17,15 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        Scene CurrentScene = SceneManager.GetActiveScene();
+        Scene Rn = SceneManager.GetSceneByName("World Map");
+        
+
+        if(CurrentScene == Rn)
+        {
+            speed = 10;
+        }
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
@@ -24,11 +34,5 @@ public class PlayerController : MonoBehaviour {
         
     }
 
-    void OnTriggerEnter2D()
-    {
-        if (gameObject.tag == "Cannon")
-        {
-            playerRB.AddForce(transform.forward * blastForce);
-        }
-    }
+    
 }
