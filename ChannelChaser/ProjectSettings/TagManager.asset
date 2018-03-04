@@ -7,7 +7,9 @@ TagManager:
   - Beholder
   - Cannon
   - ChestHealth
-  - ChestEmpty
+  - Switch
+  - Bridge
+  - Block
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour {
 
     public float speed;
     static public Rigidbody2D playerRB;
-    int blastForce = 5;
     // Use this for initialization
     void Start ()
     {
@@ -24,11 +23,11 @@ public class PlayerController : MonoBehaviour {
         
     }
 
-    void OnTriggerEnter2D()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (gameObject.tag == "Cannon")
+        if (collision.gameObject.tag == "Switch")
         {
-            playerRB.AddForce(transform.forward * blastForce);
+            BridgeController.SwitchOn = true;
         }
     }
 }
