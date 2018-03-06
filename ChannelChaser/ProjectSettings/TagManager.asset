@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Beholder
   - Cannon
+<<<<<<< HEAD
   - Glitch
   - Play
   - Exit
@@ -13,6 +14,12 @@ TagManager:
   - Forest
   - Volcano
   - Grass
+=======
+  - ChestHealth
+  - Switch
+  - Bridge
+  - Block
+>>>>>>> master
   layers:
   - Default
   - TransparentFX
