@@ -7,11 +7,8 @@ public class PlayerController : MonoBehaviour {
 
     public float speed = 2;
     static public Rigidbody2D playerRB;
-<<<<<<< HEAD
      public static bool OnGrass;
 
-=======
->>>>>>> master
     // Use this for initialization
     void Start ()
     {
@@ -52,8 +49,6 @@ public class PlayerController : MonoBehaviour {
         
     }
 
-<<<<<<< HEAD
-=======
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Switch")
@@ -61,5 +56,4 @@ public class PlayerController : MonoBehaviour {
             BridgeController.SwitchOn = true;
         }
     }
->>>>>>> master
 }
