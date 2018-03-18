@@ -6,7 +6,10 @@ public class BridgeController : MonoBehaviour {
     //Variables
     static public bool SwitchOn;
     SpriteRenderer sprite;
-    Collider2D bridgeBlock;
+    public GameObject BlockObj;
+
+    public BridgeController Bridge;
+    public BridgeController Block;
 
 	// Use this for initialization
 	void Start () {
@@ -25,8 +28,8 @@ public class BridgeController : MonoBehaviour {
 	void Update () {
 		if(SwitchOn == true)
         {
-            sprite.enabled = true;
-
+            Bridge.sprite.enabled = true;
+            BlockObj.SetActive(false);
         }
 
 

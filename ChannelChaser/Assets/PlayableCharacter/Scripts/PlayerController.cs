@@ -6,10 +6,15 @@ public class PlayerController : MonoBehaviour {
 
     public float speed;
     static public Rigidbody2D playerRB;
+    static public string Weapon;
+    public GameObject BattleScreen;
+
     // Use this for initialization
     void Start ()
     {
+        BattleScreen.SetActive(false);
         playerRB = GetComponent<Rigidbody2D>();
+        Weapon = "Unarmed";
     }
 	
 	// Update is called once per frame
@@ -28,6 +33,10 @@ public class PlayerController : MonoBehaviour {
         if (collision.gameObject.tag == "Switch")
         {
             BridgeController.SwitchOn = true;
+        }
+        else if(collision.gameObject.tag == "Beholder")
+        {
+            BattleScreen.SetActive(true);
         }
     }
 }

@@ -10,6 +10,13 @@ TagManager:
   - Switch
   - Bridge
   - Block
+  - LayerOne
+  - HPText
+  - MPText
+  - HPPotText
+  - MPPotText
+  - ShieldPotText
+  - StrengthPotText
   layers:
   - Default
   - TransparentFX
@@ -19,7 +26,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Pause
   - 
   - 
   - 
