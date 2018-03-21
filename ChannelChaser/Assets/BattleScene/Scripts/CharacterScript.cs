@@ -51,6 +51,8 @@ public class CharacterScript : MonoBehaviour
     public int maxHealsAllowed = 2;
     public int healsPerformed = 0;
 
+    public static string monsterName = "none";
+
     //Turn Sequence
     public float elapsedTime = 0;
     public float breakTime = 2;
@@ -133,6 +135,20 @@ public class CharacterScript : MonoBehaviour
 
                 if (currentStunCounter <= 0)
                     isStunned = false;
+            }
+        }
+
+        if (isAI)
+        {
+            if(monsterName == "BeholderInit")
+            {
+                Health = 200;
+                monsterName = "Beholder";
+            }
+            else if(monsterName == "AnimatedStatueInit")
+            {
+                Health = 70;
+                monsterName = "Animated Statue";
             }
         }
     }

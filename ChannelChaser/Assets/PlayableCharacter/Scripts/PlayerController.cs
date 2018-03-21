@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour {
         else if(collision.gameObject.tag == "Beholder")
         {
             BattleScreen.SetActive(true);
+            CharacterScript.monsterName = "BeholderInit";
         }
     }
 }
