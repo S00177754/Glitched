@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-    public float speed;
+    public float speed = 2;
     static public Rigidbody2D playerRB;
     static public string Weapon;
     public GameObject BattleScreen;
+    public static bool OnGrass = false;
+    public Scene WorldMap;
+    public Scene CurrentScene;
 
     // Use this for initialization
     void Start ()
@@ -15,6 +19,11 @@ public class PlayerController : MonoBehaviour {
         BattleScreen.SetActive(false);
         playerRB = GetComponent<Rigidbody2D>();
         Weapon = "Unarmed";
+
+        CurrentScene = SceneManager.GetActiveScene();
+        WorldMap = SceneManager.GetSceneByName("World Map");
+
+        
     }
 	
 	// Update is called once per frame
@@ -24,7 +33,24 @@ public class PlayerController : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
 
         playerRB.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
+
+        if (CurrentScene == WorldMap)
+        {
+            if (OnGrass == true)
+            {
+                speed = 2;
+            }
+            else
+            {
+                speed = 5;
+            }
+        }
+        else
+        {
+            speed = 2;
+        }
         
+
         
     }
 
